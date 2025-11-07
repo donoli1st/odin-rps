@@ -1,0 +1,1 @@
+This is a repository for a simple Rock-Paper-Scissors game implemented in Odin curriculum.
