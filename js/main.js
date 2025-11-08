@@ -1,6 +1,6 @@
 const decisions = [
     'rock',
-    'papaer',
+    'paper',
     'scissors'
 ]
 
@@ -28,11 +28,30 @@ function getHumanChoice(){
         return;
     }
 
-    
+    return userPrompt;
 }
 
-function restartGame (){
-    window.location.reload();
+function playRound(humanChoice, computerChoice){
+    //console.log('humanChoice',humanChoice);
+    //console.log('computerChoice',computerChoice);
+
+    if(humanChoice == computerChoice){
+        return;
+    }
+
+    if(humanChoice == decisions[0] && computerChoice != decisions[1]){
+        //console.log('CPU lose',);
+        humanScore++;
+    } else if(humanChoice == decisions[1] && computerChoice != decisions[2]){
+        //console.log('CPU lose',);
+        humanScore++;
+    } else if(humanChoice == decisions[2] && computerChoice != decisions[0]){
+        //console.log('CPU lose',);
+        humanScore++;
+    } else {
+        //console.log('Human lose',);
+        computerScore++;
+    }
 }
 
-getHumanChoice();
+playRound(getHumanChoice(), getComputerChoice())
